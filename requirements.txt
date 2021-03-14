@@ -8,12 +8,14 @@ filelock==3.0.12
 fsspec==0.8.7
 huggingface-hub==0.0.2
 idna==2.10
+importlib-metadata==3.7.3
 jiwer==2.2.0
 joblib==1.0.1
 multiprocess==0.70.11.1
 numpy==1.20.1
 packaging==20.9
 pandas==1.2.3
+Pillow==8.1.2
 pyarrow==3.0.0
 pycodestyle==2.7.0
 pyparsing==2.4.7
@@ -26,10 +28,12 @@ sacremoses==0.0.43
 six==1.15.0
 tokenizers==0.10.1
 toml==0.10.2
-torch==1.8.0
+torch==1.8.0+cu111
 torchaudio==0.8.0
+torchvision==0.9.0+cu111
 tqdm==4.49.0
 transformers @ git+https://github.com/huggingface/transformers.git@4c32f9f26e6a84f0d9843fec8757e6ce640bb44e
 typing-extensions==3.7.4.3
 urllib3==1.26.3
 xxhash==2.0.0
+zipp==3.4.1

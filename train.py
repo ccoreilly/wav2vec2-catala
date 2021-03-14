@@ -11,7 +11,7 @@ from typing import Any, Dict, List, Optional, Union
 DATASET_PATH = os.environ.get('DATASET_PATH') or './'
 
 dataset = load_dataset(
-    'csv', data_files={'train': 'train.csv', 'dev': 'dev.csv', 'test': 'test.csv'})
+    'csv', data_files={'train': 'train.csv', 'dev': 'dev.csv'})
 
 tokenizer = Wav2Vec2CTCTokenizer(
     "./vocab.json", unk_token="[UNK]", pad_token="[PAD]", word_delimiter_token="|")
@@ -29,7 +29,7 @@ def speech_file_to_array_fn(batch):
         os.path.join(DATASET_PATH, batch["wav_filename"]))
     batch["speech"] = speech_array[0].numpy()
     batch["sampling_rate"] = sampling_rate
-    batch["target_text"] = batch["transcription"]
+    batch["target_text"] = batch["transcript"]
     return batch
 
 
@@ -37,9 +37,21 @@ dataset['train'] = dataset['train'].map(
     speech_file_to_array_fn, remove_columns=dataset['train'].column_names)
 dataset['dev'] = dataset['dev'].map(
     speech_file_to_array_fn, remove_columns=dataset['dev'].column_names)
-dataset['train'] = dataset['train'].map(
-    speech_file_to_array_fn, remove_columns=dataset['train'].column_names)
 
+def prepare_dataset(batch):
+    # check that all files have the correct sampling rate
+    assert (
+        len(set(batch["sampling_rate"])) == 1
+    ), f"Make sure all inputs have the same sampling rate of {processor.feature_extractor.sampling_rate}."
+
+    batch["input_values"] = processor(batch["speech"], sampling_rate=batch["sampling_rate"][0]).input_values
+    
+    with processor.as_target_processor():
+        batch["labels"] = processor(batch["target_text"]).input_ids
+    return batch
+
+dataset['train'] = dataset['train'].map(prepare_dataset, remove_columns=dataset['train'].column_names, batch_size=8, num_proc=4, batched=True)
+dataset['dev'] = dataset['dev'].map(prepare_dataset, remove_columns=dataset['dev'].column_names, batch_size=8, num_proc=4, batched=True)
 
 @dataclass
 class DataCollatorCTCWithPadding:
@@ -126,7 +138,6 @@ def compute_metrics(pred):
 
     return {"wer": wer}
 
-
 model = Wav2Vec2ForCTC.from_pretrained(
     "facebook/wav2vec2-large-xlsr-53",
     attention_dropout=0.1,
@@ -145,7 +156,7 @@ model.freeze_feature_extractor()
 training_args = TrainingArguments(
     output_dir="./wav2vec2-large-xlsr-catala-1",
     group_by_length=True,
-    per_device_train_batch_size=16,
+    per_device_train_batch_size=8,
     gradient_accumulation_steps=2,
     evaluation_strategy="steps",
     num_train_epochs=30,
