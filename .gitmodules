@@ -1,0 +1,3 @@
+[submodule "wav2vec2-large-xlsr-catala"]
+	path = wav2vec2-large-xlsr-catala
+	url = https://huggingface.co/ccoreilly/wav2vec2-large-xlsr-catala
