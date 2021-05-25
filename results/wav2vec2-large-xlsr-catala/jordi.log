@@ -1,0 +1,52 @@
+Using custom data configuration default-be4f562f4ad7daef
+0 tables [00:00, ? tables/s]                            Special tokens have been added in the vocabulary, make sure the associated word embedding are fine-tuned or trained.
+  0%|          | 0/44 [00:00<?, ?ex/s] 11%|█▏        | 5/44 [00:00<00:00, 48.13ex/s] 18%|█▊        | 8/44 [00:00<00:01, 29.61ex/s] 23%|██▎       | 10/44 [00:00<00:01, 24.24ex/s] 27%|██▋       | 12/44 [00:00<00:02, 15.72ex/s] 32%|███▏      | 14/44 [00:00<00:01, 16.00ex/s] 39%|███▊      | 17/44 [00:00<00:01, 18.54ex/s] 43%|████▎     | 19/44 [00:00<00:01, 18.37ex/s] 50%|█████     | 22/44 [00:01<00:01, 19.77ex/s] 57%|█████▋    | 25/44 [00:01<00:00, 21.05ex/s] 64%|██████▎   | 28/44 [00:01<00:00, 22.45ex/s] 70%|███████   | 31/44 [00:01<00:00, 23.25ex/s] 77%|███████▋  | 34/44 [00:01<00:00, 23.40ex/s] 84%|████████▍ | 37/44 [00:01<00:00, 24.69ex/s] 91%|█████████ | 40/44 [00:01<00:00, 24.32ex/s]100%|██████████| 44/44 [00:01<00:00, 24.01ex/s]
+  0%|          | 0/44 [00:00<?, ?ex/s]  2%|▏         | 1/44 [00:00<00:05,  7.80ex/s]  5%|▍         | 2/44 [00:00<00:05,  7.48ex/s]  9%|▉         | 4/44 [00:00<00:04,  8.23ex/s] 11%|█▏        | 5/44 [00:00<00:05,  7.77ex/s] 18%|█▊        | 8/44 [00:00<00:03,  9.09ex/s] 20%|██        | 9/44 [00:00<00:03,  9.15ex/s] 23%|██▎       | 10/44 [00:01<00:03,  8.56ex/s] 25%|██▌       | 11/44 [00:01<00:04,  7.60ex/s] 30%|██▉       | 13/44 [00:01<00:03,  8.45ex/s] 32%|███▏      | 14/44 [00:01<00:04,  7.49ex/s] 34%|███▍      | 15/44 [00:01<00:04,  6.89ex/s] 39%|███▊      | 17/44 [00:01<00:03,  7.23ex/s] 41%|████      | 18/44 [00:02<00:03,  7.08ex/s] 45%|████▌     | 20/44 [00:02<00:03,  7.64ex/s] 50%|█████     | 22/44 [00:02<00:02,  8.43ex/s] 52%|█████▏    | 23/44 [00:02<00:02,  7.43ex/s] 57%|█████▋    | 25/44 [00:02<00:02,  7.50ex/s] 61%|██████▏   | 27/44 [00:03<00:01,  8.74ex/s] 66%|██████▌   | 29/44 [00:03<00:01,  8.75ex/s] 70%|███████   | 31/44 [00:03<00:01,  8.43ex/s] 75%|███████▌  | 33/44 [00:03<00:01,  8.59ex/s] 80%|███████▉  | 35/44 [00:03<00:00, 10.26ex/s] 84%|████████▍ | 37/44 [00:04<00:00,  9.34ex/s] 89%|████████▊ | 39/44 [00:04<00:00, 10.18ex/s] 93%|█████████▎| 41/44 [00:04<00:00, 10.05ex/s] 98%|█████████▊| 43/44 [00:04<00:00, 10.96ex/s]100%|██████████| 44/44 [00:04<00:00,  9.17ex/s]
+Downloading and preparing dataset csv/default (download: Unknown size, generated: Unknown size, post-processed: Unknown size, total: Unknown size) to /home/ubuntu/wav2vec/wav2vec2-catala/.cache/datasets/csv/default-be4f562f4ad7daef/0.0.0/2dc6629a9ff6b5697d82c25b73731dd440507a69cbce8b425db50b751e8fcfd0...
+Dataset csv downloaded and prepared to /home/ubuntu/wav2vec/wav2vec2-catala/.cache/datasets/csv/default-be4f562f4ad7daef/0.0.0/2dc6629a9ff6b5697d82c25b73731dd440507a69cbce8b425db50b751e8fcfd0. Subsequent calls will reuse this data.
+0.0,un drac una princesa i un cavaller,un drac una princesa i un cavaller
+0.0,un drac una princesa i un cavaller,un drac una princesa i un cavaller
+0.18181818181818182,la llegenda de sant jordi de care santos i dani cruz,la llegenda de sant jordi de caresantos i dani cruz
+0.16666666666666666,des d'el temps de la picor,des del temps de la picor
+0.0,diu la llegenda hi havia un drac dolent que tenia tot un poble mort de por,diu la llegenda hi havia un drac dolent que tenia tot un poble mort de por
+0.3333333333333333,i voleu saber perquè perquè era lleig fastigós cruel venjatiu banyut li feia pudor l'alè,i voleu saber per què perquè era lleis fastigós cruel venjatiu venyut li feia pudor lalè
+0.0,i quan veia un nen perdut,i quan veia un nen perdut
+0.3333333333333333,se'l cruspia en un no res,se'l cruspí en un no re
+0.16666666666666666,pensaven si cada dia la fera es mengés algú el problema acabaria,pensaven si cada dia l'afera es mengés algú el problema acabaria
+0.0,però no hi havia ningú que s'oferís voluntari més aviat tot el contrari,però no hi havia ningú que s'oferís voluntari més aviat tot el contrari
+0.07692307692307693,fins que algú va proposar resoldrem aquest mareig fent cada dia un sorteig,fins que algú va proposar resoldrem aquest mareig fent cada dia on sorteig
+0.1111111111111111,i així s'ho van empescar durant una temporada fins que tota una impensada els va venir a pertorbar,i així s'ho van empescar durant una temporada fins que tota una any pensada els va venir a pertorbar
+0.0,i és que el sorteig d'un mal dia va portar-los la sorpresa,i és que el sorteig d'un mal dia va portar-los la sorpresa
+0.7,de beure que el drac havia de cruspir-se la princesa,de veure caldrecabia de cruspirs a la princesa
+0.13043478260869565,però si és filla del rei i això que si ho diu la llei ho trobo poc oportú d'això no és lliure ningú,però si és filla del rei i això que si ho diu la llei ho trobo poc oportú d'això no es lliura a ningú
+0.125,mentre esperava s'altesa que arribés el seu final cantava amb calma i dolcesa una cançó original,mentre esperava saltesa que arribés al seu final cantava amb calma i dolcesa una cançó original
+0.1111111111111111,si em salvés un cavaller ho trobaria tan bé,si em salvés un cavaller ho trobaria tant bé
+0.17647058823529413,i vet aquí que un cavall va aparèixer a l'horitzó el muntava un infantó d'armadura de metall,ivet aquí que un cavall va aparèixer a l'horitzó el muntava un infantor d'armadura de metall
+0.0,el cavaller es deia jordi del cavall qui se'n recordi el seu nom ens podrà dir potser es deia blanc,el cavaller es deia jordi del cavall qui se'n recordi el seu nom ens podrà dir potser es deia blanc
+1.0,o albí,o el vi
+0.0,amb la llança en una mà i el coratge per bandera sant jordi matà la fera i la princesa salvà,amb la llança en una mà i el coratge per bandera sant jordi matà la fera i la princesa salvà
+0.08333333333333333,el drac va fer un esbufec el poble va fer un sospir,el drac va fer un esbufec el poble va fer un suspir
+0.2222222222222222,ella va picar l'ullet i sant jordi va enrogir,ella va picar l'ullet i sant jordi van rogir
+0.18181818181818182,aquella nit sense penes al pobles s'hi va fer un ball sobre el drac els nens i nenes anaven amunt i avall,aquella nit sense penes el poble s'hi va fer un ball sobre eldràc els nens i nenes anaven amunt i avall
+0.0,músiques com marrameus inspiraven tots els peus,músiques com marrameus inspiraven tots els peus
+0.16666666666666666,el rei que estava orgullós va preguntar al cavaller que potser voldrieu vos ma filla com a muller,el rei que estava orgullós va preguntar el cavaller que potser voldria ovós ma filla com a muller
+0.0,però sant jordi va respondre,però sant jordi va respondre
+0.4444444444444444,no sóc digne de l'honor majestat de ser-vos gendre,no sóc digne en honor majestat d'acer-vos gendre
+0.6,més m'estimo tocar el dos tant de bo pugueu comprendre,més m'estimo to quer el dos tue an de bo en pugeu comprendre
+0.05555555555555555,que no us voleu casar amb mi va fer la princesa airosa ai com us ho podré dir,que no us voleu casar amb mi va fer la princesa irosa ai com us ho podré dir
+0.0,doncs casar-se és una cosa que crec que no fa per mi,doncs casar-se és una cosa que crec que no fa per mi
+0.1875,però teniu aquesta rosa per quan us dic d'un sospir de tristesa melangiosa em recordareu preciosa,però teniu aquesta rosa per quan us vingui un sospir de tristesa malangiosa em recordareu preciosa
+0.0,jordi meu és clar que sí,jordi meu és clar que sí
+0.0,i amb l'armadura brillant i la capa alçant el vol sant jordi va marxar sol a bon pas tot murmurant,i amb l'armadura brillant i la capa alçant el vol sant jordi va marxar sol a bon pas tot murmurant
+0.0,m'emporto dins del meu cor,m'emporto dins del meu cor
+0.0,el premi del seu record,el premi del seu record
+0.0,i al final d'aquella senda ja era escrita la llegenda,i al final d'aquella senda ja era escrita la llegenda
+0.08333333333333333,un divendres vint de març escriptora i dibuixant després de pencar bastant,un divendres vint de març escriptora i dibuixant després de pancar bastant
+0.0,es van quedar descansats,es van quedar descansats
+0.18181818181818182,vet aquí el conte contat a veure si us ha agradat,vet aquí el compte comtat a veure si us ha agradat
+0.0,has escoltat un drac una princesa i un cavaller la llegenda de sant jordi,has escoltat un drac una princesa i un cavaller la llegenda de sant jordi
+0.3333333333333333,de care santos i dani cruz,de care santos i dannni cruzh
+0.0,llegit per mi oriol rafel,llegit per mi oriol rafel
+0.42857142857142855,aquest audiollibre ha estat produït per storyside,aquest audiollibre ha estat produït per a histori sithe
+0.25,copyright dos mil disset,copyri dos mil disset
+TOTAL,0.132265,0.040567,,

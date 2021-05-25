@@ -17,10 +17,34 @@ Word error rate was evaluated on the following datasets unseen by the model:
 
 | Dataset | WER |
 | ------- | --- |
-| [Test split CV+ParlamentParla]((https://github.com/ccoreilly/wav2vec2-catala/blob/master/test.csv)) | 7.57% |
-| [Google Crowsourced Corpus](https://www.openslr.org/69/) | 13.72% |
-| Audiobook “La llegenda de Sant Jordi” | 13.23% | 
+| [Test split CV+ParlamentParla]((https://github.com/ccoreilly/wav2vec2-catala/blob/master/test.csv)) | 6,92% |
+| [Google Crowsourced Corpus](https://www.openslr.org/69/) | 12,99% |
+| Audiobook “La llegenda de Sant Jordi” | 13,23% | 
 
+Com que les dades de CommonVoice contenen metadades sobre l'edat, el gènere i la variant dialectal del parlant, podem avaluar el model segons aquests paràmetres. Desafortunadament, per alguna de les categories no hi ha prou dades com per considerar la mostra significativa, és per això que s'acompanya la taxa d'error amb la mida de la mostra.
+
+| Edat | WER | Mostra
+| ------- | --- | --- |
+| 10-19 | 7,96% | 64 |
+| 20-29 | 7,52% | 330 |
+| 30-39 | 5,65% | 377 |
+| 40-49 | 6,37% | 611 |
+| 50-59 | 5,75% | 438 |
+| 60-69 | 4,82% | 166 |
+| 70-79 | 5,81% | 37 |
+
+| Accent | WER | Mostra
+| ------- | --- | --- |
+| Balear | 5,84% | 64 |
+| Central | 5,98% | 1202 |
+| Nord-occidental | 6,60% | 140 |
+| Septentrional | 5,11% | 75 |
+| Valencià | 5,69% | 290 |
+
+| Sexe | WER | Mostra
+| ------- | --- | --- |
+| Femení | 5,57% | 749 |
+| Masculí | 6,65% | 1280 |
 
 ## Com fer-lo servir / Usage
 
