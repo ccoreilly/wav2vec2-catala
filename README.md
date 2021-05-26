@@ -1,13 +1,21 @@
 # Wav2Vec2 Català
 
-Un model de reconeixement automàtic de la parla Wav2Vec2 pel Català.
+Models de reconeixement automàtic de la parla Wav2Vec2 pel Català.
 
-Podeu trobar el model al dipòsit de huggingface [ccoreilly/wav2vec2-large-xlsr-catala](https://huggingface.co/ccoreilly/wav2vec2-large-xlsr-catala).
+S'ha fet fine-tuning a partir de dos models base, el [facebook/wav2vec2-large-xlsr-53](https://huggingface.co/facebook/wav2vec2-large-xlsr-53) i el [facebook/wav2vec2-large-100k-voxpopuli](https://huggingface.co/facebook/wav2vec2-large-100k-voxpopuli). Els podeu trobar a:
+- [ccoreilly/wav2vec2-large-xlsr-catala](https://huggingface.co/ccoreilly/wav2vec2-large-xlsr-catala).
+- [ccoreilly/wav2vec2-large-100k-voxpopuli-catala](https://huggingface.co/ccoreilly/wav2vec2-large-100k-voxpopuli-catala).
 
-Fine-tuned [facebook/wav2vec2-large-xlsr-53](https://huggingface.co/facebook/wav2vec2-large-xlsr-53) on Catalan language using the [Common Voice](https://huggingface.co/datasets/common_voice) and [ParlamentParla](https://www.openslr.org/59/) datasets.
+Fine-tuned Wav2Vec2 models for the Catalan language based on [facebook/wav2vec2-large-xlsr-53](https://huggingface.co/facebook/wav2vec2-large-xlsr-53) and [facebook/wav2vec2-large-100k-voxpopuli](https://huggingface.co/facebook/wav2vec2-large-100k-voxpopuli)
 
-You can find the model in the huggingface repository [ccoreilly/wav2vec2-large-xlsr-catala](https://huggingface.co/ccoreilly/wav2vec2-large-xlsr-catala).
+You can find the models in the huggingface repository: 
+- [ccoreilly/wav2vec2-large-xlsr-catala](https://huggingface.co/ccoreilly/wav2vec2-large-xlsr-catala).
+- [ccoreilly/wav2vec2-large-100k-voxpopuli-catala](https://huggingface.co/ccoreilly/wav2vec2-large-100k-voxpopuli-catala).
 
+## Datasets
+
+- [Common Voice](https://huggingface.co/datasets/common_voice)
+- [ParlamentParla](https://www.openslr.org/59/)
 
 ## WER
 
@@ -15,36 +23,37 @@ Avaluada en els següents datasets no vistos durant l'entrenament:
 
 Word error rate was evaluated on the following datasets unseen by the model:
 
-| Dataset | WER |
-| ------- | --- |
-| [Test split CV+ParlamentParla]((https://github.com/ccoreilly/wav2vec2-catala/blob/master/test.csv)) | 6,92% |
-| [Google Crowsourced Corpus](https://www.openslr.org/69/) | 12,99% |
-| Audiobook “La llegenda de Sant Jordi” | 13,23% | 
+| Dataset | XLSR-53 | VoxPopuli |
+| ------- | --- | --- |
+| [Test split CV+ParlamentParla]((https://github.com/ccoreilly/wav2vec2-catala/blob/master/test-filtered.csv)) | 6,92% | 5.98% |
+| [Google Crowsourced Corpus](https://www.openslr.org/69/) | 12,99% | 12,14% |
+| Audiobook “La llegenda de Sant Jordi” | 13,23% | 12,02% |
+
 
 Com que les dades de CommonVoice contenen metadades sobre l'edat, el gènere i la variant dialectal del parlant, podem avaluar el model segons aquests paràmetres. Desafortunadament, per alguna de les categories no hi ha prou dades com per considerar la mostra significativa, és per això que s'acompanya la taxa d'error amb la mida de la mostra.
 
-| Edat | WER | Mostra
-| ------- | --- | --- |
-| 10-19 | 7,96% | 64 |
-| 20-29 | 7,52% | 330 |
-| 30-39 | 5,65% | 377 |
-| 40-49 | 6,37% | 611 |
-| 50-59 | 5,75% | 438 |
-| 60-69 | 4,82% | 166 |
-| 70-79 | 5,81% | 37 |
+| Edat | Mostra | XLSR-53 | VoxPopuli |
+| ------- | --- | --- | --- |
+| 10-19 | 64 | 7,96% | 8,54% |
+| 20-29 | 330 | 7,52% | 6,10% |
+| 30-39 | 377 | 5,65% | 4,55% |
+| 40-49 | 611 | 6,37% | 6,17% |
+| 50-59 | 438 | 5,75% | 5,30% |
+| 60-69 | 166 | 4,82% | 4,20% |
+| 70-79 | 37 | 5,81% | 5,33% |
 
-| Accent | WER | Mostra
-| ------- | --- | --- |
-| Balear | 5,84% | 64 |
-| Central | 5,98% | 1202 |
-| Nord-occidental | 6,60% | 140 |
-| Septentrional | 5,11% | 75 |
-| Valencià | 5,69% | 290 |
+| Accent | Mostra | XLSR-53 | VoxPopuli |
+| ------- | --- | --- | --- |
+| Balear | 64 | 5,84% | 5,11% |
+| Central | 1202 | 5,98% | 5,37% |
+| Nord-occidental | 140 | 6,60% | 5,77% |
+| Septentrional | 75 | 5,11% | 5,58% |
+| Valencià | 290 | 5,69% | 5,30% |
 
-| Sexe | WER | Mostra
-| ------- | --- | --- |
-| Femení | 5,57% | 749 |
-| Masculí | 6,65% | 1280 |
+| Sexe | Mostra | XLSR-53 | VoxPopuli |
+| ------- | --- | --- | --- |
+| Femení | 749 | 5,57% | 4,95% |
+| Masculí | 1280 | 6,65% | 5,98% |
 
 ## Com fer-lo servir / Usage
 
@@ -56,8 +65,8 @@ from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
 
 test_dataset = load_dataset("common_voice", "ca", split="test[:2%]")
 
-processor = Wav2Vec2Processor.from_pretrained("ccoreilly/wav2vec2-large-xlsr-catala") 
-model = Wav2Vec2ForCTC.from_pretrained("ccoreilly/wav2vec2-large-xlsr-catala")
+processor = Wav2Vec2Processor.from_pretrained("ccoreilly/wav2vec2-large-100k-voxpopuli-catala") 
+model = Wav2Vec2ForCTC.from_pretrained("ccoreilly/wav2vec2-large-100k-voxpopuli-catala")
 
 resampler = torchaudio.transforms.Resample(48_000, 16_000)
 

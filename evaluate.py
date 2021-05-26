@@ -12,8 +12,8 @@ dataset = load_dataset(
     
 test_dataset = dataset['test']
 
-processor = Wav2Vec2Processor.from_pretrained("wav2vec2-large-xlsr-catala")
-model = Wav2Vec2ForCTC.from_pretrained("wav2vec2-large-xlsr-catala")
+processor = Wav2Vec2Processor.from_pretrained("wav2vec2-large-100k-voxpopuli-catala")
+model = Wav2Vec2ForCTC.from_pretrained("wav2vec2-large-100k-voxpopuli-catala")
 model.to("cuda")
 
 

@@ -1,3 +1,6 @@
 [submodule "wav2vec2-large-xlsr-catala"]
 	path = wav2vec2-large-xlsr-catala
 	url = https://huggingface.co/ccoreilly/wav2vec2-large-xlsr-catala
+[submodule "wav2vec2-large-100k-voxpopuli-catala"]
+	path = wav2vec2-large-100k-voxpopuli-catala
+	url = https://huggingface.co/ccoreilly/wav2vec2-large-100k-voxpopuli-catala

@@ -21,7 +21,7 @@ feature_extractor = Wav2Vec2FeatureExtractor(
 
 processor = Wav2Vec2Processor(
     feature_extractor=feature_extractor, tokenizer=tokenizer)
-processor.save_pretrained('./wav2vec2-large-xlsr-catala')
+processor.save_pretrained('./wav2vec2-large-100k-voxpopuli-catala')
 
 
 def speech_file_to_array_fn(batch):
@@ -139,7 +139,7 @@ def compute_metrics(pred):
     return {"wer": wer}
 
 model = Wav2Vec2ForCTC.from_pretrained(
-    "facebook/wav2vec2-large-xlsr-53",
+    "facebook/wav2vec2-large-100k-voxpopuli",
     attention_dropout=0.1,
     hidden_dropout=0.1,
     feat_proj_dropout=0.0,
@@ -154,7 +154,7 @@ model = Wav2Vec2ForCTC.from_pretrained(
 model.freeze_feature_extractor()
 
 training_args = TrainingArguments(
-    output_dir="./wav2vec2-large-xlsr-catala-1",
+    output_dir="./wav2vec2-large-100k-voxpopuli-catala-1",
     group_by_length=True,
     per_device_train_batch_size=8,
     gradient_accumulation_steps=2,
