@@ -18,8 +18,8 @@ from flashlight.lib.text.decoder import LexiconFreeDecoder, LexiconFreeDecoderOp
 
 
 kenlm_args = {
-    "kenlm_model_path": "cat.lm.bin",
-    "lexicon_path": "cat.lexicon",  # Each in a new line: WORD W O R D
+    "kenlm_model_path": "ca.lm.bin",
+    "lexicon_path": "ca.lexicon",  # Each in a new line: WORD W O R D
     "beam": 1000,
     "nbest": 1,
     "beam_threshold": 20,
